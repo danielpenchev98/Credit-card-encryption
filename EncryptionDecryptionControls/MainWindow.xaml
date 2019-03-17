@@ -1,0 +1,28 @@
+﻿<Window x:Class="CardsEncryptionDecryption.MainWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:InputControls="clr-namespace:InputControls;assembly=InputControls"
+        xmlns:EncryptionDecryptionControls="clr-namespace:EncryptionDecryptionControls;assembly=EncryptionDecryptionControls"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="CardEncryptionDecryption" Height="450" Width="450.574">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="Converter"/>
+    </Window.Resources>
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <InputControls:LoginControl x:Name="LoginControl"  loginOrRegister="OnLogin"   HorizontalAlignment="Left" Height="318" Margin="10,10,0,0" VerticalAlignment="Top" Width="423" />
+        <EncryptionDecryptionControls:EncrDecrControl  x:Name="EncryptDecrypt" action="OnAction"  Visibility="Hidden"  Margin="1,45,0,92"/>
+        <Button Content="Logoff" x:Name="LogoffBtn" Click="LogoffBtn_Click"  Margin="310,9,10,379" Visibility="Hidden"/>
+        <Button Content="By card numbers" x:Name="SortedByCardNumberBtn" Click="SaveInfoInFileBtn_Click" Margin="263,352,34,32" Visibility="Hidden" />
+        <Button Content="By encrypted numbers" x:Name="SortedByEncryptedNumbersBtn" Click="SaveInfoInFileBtn_Click" Margin="263,312,34,72" Visibility="Hidden" />
+        <TextBlock x:Name="lblSaveOption" Margin="10,312,185,25" Visibility="Hidden"/>
+        <TextBlock x:Name="txtEcryptionResult"  Margin="165,126,10,267"/>
+        <TextBlock x:Name="txtDecryptionResult"  Margin="165,274,10,120" />
+       
+    </Grid>
+</Window>
